@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karen Trejo | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #004d61, #009688);
+      color: #fff;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #004d61;
+    }
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+    }
+    .skills div {
+      background: #e0f2f1;
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: 600;
+      color: #004d61;
+    }
+    .experience, .projects {
+      list-style: none;
+    }
+    .experience li, .projects li {
+      margin-bottom: 1rem;
+    }
+    .contact {
+      text-align: center;
+    }
+    .contact a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #009688;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .contact a:hover {
+      background: #00796b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Karen Trejo</h1>
+    <p>Sales Engineer | Software Developer | Data Analyst</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>Bilingual tech professional with a background in software development, AI research, and data optimization. Skilled in delivering technical solutions that improve client ROI and retention. Known for problem-solving, adaptability, and a collaborative spirit.</p>
+  </section>
+
+  <section>
+    <h2>Key Skills</h2>
+    <div class="skills">
+      <div>SQL &amp; Data Analysis</div>
+      <div>API Integration (Postman)</div>
+      <div>Python, Java, JavaScript</div>
+      <div>Cloud: AWS &amp; Firebase</div>
+      <div>Agile/Scrum</div>
+      <div>Bilingual: English &amp; Spanish</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience Highlights</h2>
+    <ul class="experience">
+      <li><strong>Operations Research Analyst – U.S. Army</strong><br>Optimized performance metrics using SQL, modeling, and simulation. Delivered insights that improved decision-making and operational efficiency.</li>
+      <li><strong>Software Developer Intern – Itron</strong><br>Enhanced UI/UX, troubleshot application issues, and collaborated with cross-functional teams to meet client needs.</li>
+      <li><strong>AI Analyst – Nagarro</strong><br>Developed interactive dashboards, analyzed KPIs, and provided data-driven recommendations for enterprise clients.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Featured Projects</h2>
+    <ul class="projects">
+      <li><strong>Workout App (Java, Android Studio)</strong> – Fully functional app with custom tracking features.</li>
+      <li><strong>AI Chatbot (Python, NLP)</strong> – Prototyped chatbot with natural language understanding.</li>
+      <li><strong>E-Commerce Website</strong> – Full-stack platform with secure checkout and responsive design.</li>
+    </ul>
+  </section>
+
+  <section class="contact">
+    <h2>Contact</h2>
+    <a href="mailto:karen.priscilla11@gmail.com">Email Me</a>
+    <a href="Karen_Trejo_Tech_Resume.pdf" download>Download Resume</a>
+    <a href="https://www.linkedin.com/in/karen-trejo-84474b216" target="_blank">LinkedIn</a>
+  </section>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const reveal = () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if(top < trigger) {
+          section.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
+</body>
+</html>
